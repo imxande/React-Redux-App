@@ -20,7 +20,7 @@ import {
       case FETCH_DATA_SUCCESS:
         return {
           ...state,
-          joke: action.payload,
+          data: action.payload,
           isFetching: false,
           error: ''
         };
