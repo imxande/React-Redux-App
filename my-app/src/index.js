@@ -6,14 +6,12 @@ import {Provider} from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import * as serviceWorker from './serviceWorker';
 import thunk from 'redux-thunk';
-import reducer from './reducer/nasaReducer';
-
+import reducer from './reducers/nasaReducer';
 
 const store = createStore(reducer, applyMiddleware(thunk));
 
-
 ReactDOM.render(
-<Provider>
+<Provider store = {store}>
     <App />
 </Provider>, 
 document.getElementById('root'));

@@ -1,9 +1,9 @@
 import {
-    FETCH_DATA_START,
-    FETCH_DATA_SUCCESS,
-    FETCH_DATA_FAILURE
-  } from '../actions';
-  
+  FETCH_DATA_START,
+  FETCH_DATA_SUCCESS,
+  FETCH_DATA_FAILURE
+} from '../action';
+
   const initialState = {
     data: null,
     isFetching: false,
