@@ -8,10 +8,10 @@ export const FETCH_DATA_FAILURE = 'FETCH_DATA_FAILURE';
 export const getData = () => dispatch => {
   dispatch({ type: FETCH_DATA_START });
   axios
-    .get(' https://api.nasa.gov/insight_weather/?api_key=dvYTELGzoid9GWDtlniSsrCIEbesDqen7iRX6nUd&feedtype=json&ver=1.0')
+    .get( 'https://rickandmortyapi.com/api/character/')
     .then(response => {
-      console.log(response);
-      dispatch({ type: FETCH_DATA_SUCCESS, payload: response.data });
+      console.log(response.data.results);
+      dispatch({ type: FETCH_DATA_SUCCESS, payload: response.data.results });
     })
     .catch(error => {
       dispatch({ type: FETCH_DATA_FAILURE, payload: error.response });

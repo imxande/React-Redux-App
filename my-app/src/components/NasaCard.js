@@ -3,11 +3,12 @@ import React from 'react'
 const NasaCard = props => {
     return (
         <div>
-            <h2> {props.number} </h2>
-            <p>Air Temp: {props.airTemp}</p>
-            <p>Wind Speed: {props.windSpeed} </p>
-            <p>Pressure: {props.pressure} </p>
-            <p>Season: {props.season} </p>
+            <img src={props.image}/>
+            <h2> {props.name} </h2>
+            <p>Species: {props.species}</p>
+            {/* <p>Location: {props.location} </p> */}
+            <p>Status: {props.status} </p>
+            {/* <p>Origin: {props.origin} </p> */}
         </div>
     )
 }

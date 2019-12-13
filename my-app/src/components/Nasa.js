@@ -4,24 +4,16 @@ import Loader from 'react-loader-spinner';
 import NasaCard from './NasaCard';
 
 import { getData } from '../action';
+import NasaResults from './NasaResults';
 
 const Nasa = (props) => {
+    // console.log(props)
     return(
         <div>
-            {Object.keys(data).map(item =>{
-                <NasaCard 
-                key = {item}
-                number = {item} 
-                airTemp = {item.AT.av}
-                windSpeed = {item.HWS.av}
-                pressure = {item.PRE.av}
-                season = {item.Season}
-                  />
-            })}
-            
+            <NasaResults />
                  {!props.data && !props.isFetching && <p> Fetch Nasa Data 😂</p>}
                  {props.isFetching && (
-                    <Loader type="Puff" color="#00BFFF" height={100} width={100} />
+                 <Loader type="Puff" color="#00BFFF" height={100} width={100} />
                  )}
              {props.joke && <p>{props.data.data}</p>}
      
