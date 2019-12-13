@@ -8,8 +8,17 @@ import { getData } from '../action';
 const Nasa = (props) => {
     return(
         <div>
-            <h2>Not social life</h2>
-            <NasaCard />
+            {Object.keys(data).map(item =>{
+                <NasaCard 
+                key = {item}
+                number = {item} 
+                airTemp = {item.AT.av}
+                windSpeed = {item.HWS.av}
+                pressure = {item.PRE.av}
+                season = {item.Season}
+                  />
+            })}
+            
                  {!props.data && !props.isFetching && <p> Fetch Nasa Data 😂</p>}
                  {props.isFetching && (
                     <Loader type="Puff" color="#00BFFF" height={100} width={100} />
